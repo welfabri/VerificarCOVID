@@ -10,13 +10,12 @@ namespace VerificarCOVID
     public partial class Form1 : Form
     {
         private ChromeDriver _driver;
-        private readonly string _url = "https://vacinacovid.saobernardo.sp.gov.br/VacinaSBCProd/servlet/inicial"; //"https://www.random.org/integers/?num=1&min=1&max=100000&col=5&base=10&format=html&rnd=new";
+        private readonly string _url = "http://vacinacovid.saobernardo.sp.gov.br/VacinaSBCProd/servlet/inicial"; //"https://www.random.org/integers/?num=1&min=1&max=100000&col=5&base=10&format=html&rnd=new";
 
         public Form1()
         {
             InitializeComponent();
             ParametrizaComponentes();
-
             Iniciar();
         }
 
@@ -161,6 +160,28 @@ namespace VerificarCOVID
         {
             if (_driver is not null)
                 _driver.Quit();
+        }
+
+        private void AbrirBrowser()
+        {
+            try
+            {
+                var ps = new System.Diagnostics.ProcessStartInfo(_url)
+                {
+                    UseShellExecute = true,
+                    Verb = "open"
+                };
+                System.Diagnostics.Process.Start(ps);
+            }
+            catch (System.ComponentModel.Win32Exception noBrowser)
+            {
+                if (noBrowser.ErrorCode == -2147467259)
+                    MessageBox.Show(noBrowser.Message);
+            }
+            catch (System.Exception other)
+            {
+                MessageBox.Show(other.Message);
+            }
         }
     }
 }
