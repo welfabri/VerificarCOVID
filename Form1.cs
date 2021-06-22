@@ -9,8 +9,9 @@ namespace VerificarCOVID
 {
     public partial class Form1 : Form
     {
-        private ChromeDriver _driver;
-        private readonly string _url = "http://vacinacovid.saobernardo.sp.gov.br/VacinaSBCProd/servlet/inicial"; //"https://www.random.org/integers/?num=1&min=1&max=100000&col=5&base=10&format=html&rnd=new";
+        private ChromeDriver _driver;   
+        private readonly string _url = "https://vacinacovid.saobernardo.sp.gov.br/VacinaSBCProd/servlet/inicial";
+            //"https://www.random.org/integers/?num=1&min=1&max=100000&col=5&base=10&format=html&rnd=new";
 
         public Form1()
         {
