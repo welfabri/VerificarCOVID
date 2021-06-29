@@ -83,7 +83,7 @@ namespace VerificarCOVID
             this.tbIdades.Name = "tbIdades";
             this.tbIdades.Size = new System.Drawing.Size(150, 23);
             this.tbIdades.TabIndex = 3;
-            this.tbIdades.Text = "35,36,37,38,39,40,41";
+            this.tbIdades.Text = "35,36,37,38,39,60,61,62,63,64,65,66";
             this.toolTip1.SetToolTip(this.tbIdades, "Idades separadas por VÍRGULAS");
             // 
             // button1

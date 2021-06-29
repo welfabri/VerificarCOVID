@@ -85,7 +85,7 @@ namespace VerificarCOVID
                 if (!achou)
                 {
                     AdicionaTextBox("");
-                    VerificarCOVIDUtil.Flash(this, 1);
+                    //VerificarCOVIDUtil.Flash(this, 1);
                 }
                 else
                 {
