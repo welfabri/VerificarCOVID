@@ -34,12 +34,14 @@ namespace VerificarCOVID
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lblAchouIdade = new System.Windows.Forms.Label();
-            this.tbIdades = new System.Windows.Forms.TextBox();
+            this.tbPrimeiraDose = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.edtTempo = new System.Windows.Forms.NumericUpDown();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.tbSegundaDose = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.edtTempo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,9 +50,9 @@ namespace VerificarCOVID
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 15);
+            this.label1.Size = new System.Drawing.Size(50, 15);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Idades:";
+            this.label1.Text = "1ª Dose:";
             // 
             // textBox1
             // 
@@ -77,14 +79,14 @@ namespace VerificarCOVID
             this.lblAchouIdade.Text = "ACHOU!!!";
             this.lblAchouIdade.Visible = false;
             // 
-            // tbIdades
+            // tbPrimeiraDose
             // 
-            this.tbIdades.Location = new System.Drawing.Point(62, 6);
-            this.tbIdades.Name = "tbIdades";
-            this.tbIdades.Size = new System.Drawing.Size(150, 23);
-            this.tbIdades.TabIndex = 3;
-            this.tbIdades.Text = "35,36,37,38,39,60,61,62,63,64,65,66";
-            this.toolTip1.SetToolTip(this.tbIdades, "Idades separadas por VÍRGULAS");
+            this.tbPrimeiraDose.Location = new System.Drawing.Point(62, 6);
+            this.tbPrimeiraDose.Name = "tbPrimeiraDose";
+            this.tbPrimeiraDose.Size = new System.Drawing.Size(150, 23);
+            this.tbPrimeiraDose.TabIndex = 3;
+            this.tbPrimeiraDose.Text = "35,36,37,38,39";
+            this.toolTip1.SetToolTip(this.tbPrimeiraDose, "Idades separadas por VÍRGULAS");
             // 
             // button1
             // 
@@ -109,7 +111,7 @@ namespace VerificarCOVID
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(231, 9);
+            this.label2.Location = new System.Drawing.Point(446, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 15);
             this.label2.TabIndex = 6;
@@ -118,7 +120,7 @@ namespace VerificarCOVID
             // edtTempo
             // 
             this.edtTempo.DecimalPlaces = 1;
-            this.edtTempo.Location = new System.Drawing.Point(290, 6);
+            this.edtTempo.Location = new System.Drawing.Point(505, 6);
             this.edtTempo.Name = "edtTempo";
             this.edtTempo.Size = new System.Drawing.Size(51, 23);
             this.edtTempo.TabIndex = 7;
@@ -136,16 +138,36 @@ namespace VerificarCOVID
             this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTip1.ToolTipTitle = "verificaCOVID_SBC";
             // 
+            // tbSegundaDose
+            // 
+            this.tbSegundaDose.Location = new System.Drawing.Point(279, 5);
+            this.tbSegundaDose.Name = "tbSegundaDose";
+            this.tbSegundaDose.Size = new System.Drawing.Size(150, 23);
+            this.tbSegundaDose.TabIndex = 9;
+            this.tbSegundaDose.Text = "60,61,62,63,64,65,66";
+            this.toolTip1.SetToolTip(this.tbSegundaDose, "Idades separadas por VÍRGULAS");
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(229, 8);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(50, 15);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "2ª Dose:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(732, 212);
+            this.Controls.Add(this.tbSegundaDose);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.edtTempo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.tbIdades);
+            this.Controls.Add(this.tbPrimeiraDose);
             this.Controls.Add(this.lblAchouIdade);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
@@ -164,12 +186,14 @@ namespace VerificarCOVID
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lblAchouIdade;
-        private System.Windows.Forms.TextBox tbIdades;
+        private System.Windows.Forms.TextBox tbPrimeiraDose;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown edtTempo;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.TextBox tbSegundaDose;
+        private System.Windows.Forms.Label label3;
     }
 }
 

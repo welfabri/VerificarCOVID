@@ -39,9 +39,14 @@ namespace VerificarCOVID
         private void Timer1_Tick(object sender, EventArgs e)
             => ProcessaDados();
 
-        private bool AchouIdades(string texto)
+        private bool AchouIdades(byte dose, string texto)
         {
-            var tb = tbIdades.Text.Split(',');
+            string[] tb;
+
+            if (dose == 1)
+                tb = tbPrimeiraDose.Text.Split(',');
+            else
+                tb = tbSegundaDose.Text.Split(',');
 
             for (var i = 0; i < tb.Length; i++)
                 if ((!texto.ToUpper().Contains("COMORBIDADE")) 
@@ -57,7 +62,10 @@ namespace VerificarCOVID
         }
 
         private void LimpaControles()
-            => textBox1.Clear();
+        {
+            textBox1.Clear();
+            lblAchouIdade.Visible = false;
+        }
 
         private void ProcessaDados()
         {
@@ -75,7 +83,7 @@ namespace VerificarCOVID
 
                     foreach (var o in optionsIdade)
                     {
-                        achou = AchouIdades(o.Text);
+                        achou = AchouIdades(1, o.Text);
 
                         if (achou)
                             break;
@@ -84,6 +92,21 @@ namespace VerificarCOVID
 
                 if (!achou)
                 {
+                    selectIdades = _driver.FindElements(By.Id("vPUBLICOALVOID2")).ToList();
+
+                    foreach (var i in selectIdades)
+                    {
+                        var optionsIdade = i.FindElements(By.TagName("option")).ToList();
+
+                        foreach (var o in optionsIdade)
+                        {
+                            achou = AchouIdades(2, o.Text);
+
+                            if (achou)
+                                break;
+                        }
+                    }
+
                     AdicionaTextBox("");
                     //VerificarCOVIDUtil.Flash(this, 1);
                 }
